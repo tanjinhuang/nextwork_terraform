@@ -1,5 +1,6 @@
 provider "aws" { # tell Terraform to use AWS
   region = "ap-southeast-1" # region
+  profile = "admin" # IAM profile used during aws login 
   default_tags { # default tags for all resources
     tags = {
       Environment = "Dev"
