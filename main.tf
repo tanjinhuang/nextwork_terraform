@@ -32,3 +32,9 @@ resource "aws_s3_bucket_public_access_block" "my_bucket_public_access_block" { #
   block_public_policy     = true
   restrict_public_buckets = true
 }
+
+resource "aws_s3_object" "image" { # upload an object to the S3 bucket
+  bucket = aws_s3_bucket.my_bucket.id # Reference the bucket ID
+  key    = "image.png" # the path of the object in the bucket, since it's path, we can define folder too like images/image.png
+  source = "smolHaruna.png" # Local file path, source file to upload to S3
+}
